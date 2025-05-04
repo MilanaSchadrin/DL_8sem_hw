@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+
+images_evaluation/
+images_background/
+runs/

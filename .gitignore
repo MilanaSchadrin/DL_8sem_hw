@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+
+hw4/images_evaluation/
+hw4/images_background/
+hw4/runs/
+images_background.zip
+images_evaluation.zip
