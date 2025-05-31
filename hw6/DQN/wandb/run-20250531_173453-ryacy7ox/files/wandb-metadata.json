@@ -1,0 +1,43 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.5",
+  "startedAt":  "2025-05-31T14:34:53.859650Z",
+  "args":  [
+    "test.py"
+  ],
+  "program":  "-m __main__",
+  "git":  {
+    "remote":  "https://github.com/MilanaSchadrin/DL_8sem_hw.git",
+    "commit":  "6a94426198b828c280da8e8ea15bcc26e65b5656"
+  },
+  "email":  "shadrina.mi@phystech.edu",
+  "root":  "C:\\Users\\milan\\Documents\\Uni\\Alg\\DL\\DL_8sem_hw-1\\hw6",
+  "host":  "MilkyWay",
+  "executable":  "C:\\Users\\milan\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "NVIDIA GeForce RTX 2070",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "491350462464",
+      "used":  "435086364672"
+    }
+  },
+  "memory":  {
+    "total":  "16954851328"
+  },
+  "cpu":  {
+    "count":  6,
+    "countLogical":  12
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 2070",
+      "memoryTotal":  "8589934592",
+      "cudaCores":  2304,
+      "architecture":  "Turing"
+    }
+  ],
+  "cudaVersion":  "12.9"
+}

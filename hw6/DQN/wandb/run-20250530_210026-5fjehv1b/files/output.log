@@ -1,0 +1,22 @@
+No model found.
+Episode 0 | Total reward: -10.4 | Epsilon: 0.10000
+Episode 1 | Total reward: -10.4 | Epsilon: 0.09999
+Saved model at step 100
+Episode 2 | Total reward: -10.450000000000001 | Epsilon: 0.09999
+Episode 3 | Total reward: -10.38 | Epsilon: 0.09998
+Episode 4 | Total reward: -10.450000000000001 | Epsilon: 0.09998
+Episode 5 | Total reward: -10.43 | Epsilon: 0.09997
+Episode 6 | Total reward: -10.34 | Epsilon: 0.09997
+Saved model at step 300
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 255, in <module>
+    train()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 173, in train
+    x_t1_colored, reward, terminal= game_state.frame_step(a_t)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\game\wrapped_flappy_bird.py", line 167, in frame_step
+    image_data = pygame.surfarray.array3d(pygame.display.get_surface())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\pygame\surfarray.py", line 193, in array3d
+    surface_to_array(array, surface)
+KeyboardInterrupt

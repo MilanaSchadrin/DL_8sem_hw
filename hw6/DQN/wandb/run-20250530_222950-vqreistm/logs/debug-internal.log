@@ -1,0 +1,15 @@
+{"time":"2025-05-30T22:29:50.7080023+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\milan\\Documents\\Uni\\Alg\\DL\\DL_8sem_hw-1\\hw6\\wandb\\run-20250530_222950-vqreistm\\logs\\debug-core.log"}
+{"time":"2025-05-30T22:29:50.8225208+03:00","level":"INFO","msg":"created new stream","id":"vqreistm"}
+{"time":"2025-05-30T22:29:50.8231255+03:00","level":"INFO","msg":"stream: started","id":"vqreistm"}
+{"time":"2025-05-30T22:29:50.8231255+03:00","level":"INFO","msg":"handler: started","stream_id":"vqreistm"}
+{"time":"2025-05-30T22:29:50.8231255+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"vqreistm"}
+{"time":"2025-05-30T22:29:50.8231255+03:00","level":"INFO","msg":"sender: started","stream_id":"vqreistm"}
+{"time":"2025-05-30T22:29:51.1704881+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-30T22:30:02.9843922+03:00","level":"INFO","msg":"stream: closing","id":"vqreistm"}
+{"time":"2025-05-30T22:30:02.9843922+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-30T22:30:02.984897+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-30T22:30:03.7084265+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-30T22:30:04.0243532+03:00","level":"INFO","msg":"handler: closed","stream_id":"vqreistm"}
+{"time":"2025-05-30T22:30:04.0243532+03:00","level":"INFO","msg":"sender: closed","stream_id":"vqreistm"}
+{"time":"2025-05-30T22:30:04.0243532+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"vqreistm"}
+{"time":"2025-05-30T22:30:04.0248575+03:00","level":"INFO","msg":"stream: closed","id":"vqreistm"}

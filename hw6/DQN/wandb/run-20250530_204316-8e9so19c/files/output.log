@@ -1,0 +1,47 @@
+No model found.
+Episode 0 | Total reward: -10.31 | Epsilon: 0.99997
+Episode 1 | Total reward: -10.28 | Epsilon: 0.99994
+Episode 2 | Total reward: -10.31 | Epsilon: 0.99991
+Saved model at step 100
+Episode 3 | Total reward: -10.32 | Epsilon: 0.99988
+Episode 4 | Total reward: -10.290000000000001 | Epsilon: 0.99985
+Episode 5 | Total reward: -10.3 | Epsilon: 0.99981
+Episode 6 | Total reward: -10.33 | Epsilon: 0.99978
+Episode 7 | Total reward: -10.32 | Epsilon: 0.99975
+Episode 8 | Total reward: -10.34 | Epsilon: 0.99971
+Episode 9 | Total reward: -10.31 | Epsilon: 0.99968
+Episode 10 | Total reward: -10.3 | Epsilon: 0.99965
+Episode 11 | Total reward: -10.290000000000001 | Epsilon: 0.99962
+Episode 12 | Total reward: -10.32 | Epsilon: 0.99959
+Episode 13 | Total reward: -10.290000000000001 | Epsilon: 0.99956
+Episode 14 | Total reward: -10.3 | Epsilon: 0.99953
+Episode 15 | Total reward: -10.290000000000001 | Epsilon: 0.99950
+Episode 16 | Total reward: -10.28 | Epsilon: 0.99947
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 255, in <module>
+    train()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 172, in train
+    a_t = agent.choose_action(s_t, epsilon)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 83, in choose_action
+    q_values = self.eval_net(state)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 64, in forward
+    x = F.relu(self.fc1(x))
+               ^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x2304 and 3136x512)

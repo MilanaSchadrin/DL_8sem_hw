@@ -1,0 +1,57 @@
+No model found.
+Episode 0 | Total reward: 17.0 | Epsilon: 0.09999
+Episode 1 | Total reward: 17.0 | Epsilon: 0.09999
+Episode 2 | Total reward: 17.0 | Epsilon: 0.09998
+Saved model at step 100
+Episode 3 | Total reward: 17.0 | Epsilon: 0.09998
+Episode 4 | Total reward: 17.0 | Epsilon: 0.09997
+Episode 5 | Total reward: 17.0 | Epsilon: 0.09997
+Episode 6 | Total reward: 17.0 | Epsilon: 0.09996
+Episode 7 | Total reward: 17.0 | Epsilon: 0.09996
+Episode 8 | Total reward: 17.0 | Epsilon: 0.09995
+Episode 9 | Total reward: 17.0 | Epsilon: 0.09995
+Saved model at step 300
+Episode 10 | Total reward: 17.0 | Epsilon: 0.09994
+Episode 11 | Total reward: 17.0 | Epsilon: 0.09994
+Episode 12 | Total reward: 17.0 | Epsilon: 0.09993
+Episode 13 | Total reward: 17.0 | Epsilon: 0.09993
+Episode 14 | Total reward: 17.0 | Epsilon: 0.09992
+Episode 15 | Total reward: 17.0 | Epsilon: 0.09992
+Episode 16 | Total reward: 17.0 | Epsilon: 0.09991
+Saved model at step 500
+Episode 17 | Total reward: 17.0 | Epsilon: 0.09991
+Episode 18 | Total reward: 17.0 | Epsilon: 0.09990
+Episode 19 | Total reward: 17.0 | Epsilon: 0.09990
+Episode 20 | Total reward: 17.0 | Epsilon: 0.09989
+Episode 21 | Total reward: 17.0 | Epsilon: 0.09989
+Episode 22 | Total reward: 17.0 | Epsilon: 0.09988
+Episode 23 | Total reward: 17.0 | Epsilon: 0.09988
+Episode 24 | Total reward: 17.0 | Epsilon: 0.09987
+Episode 25 | Total reward: 17.0 | Epsilon: 0.09987
+Episode 26 | Total reward: 17.0 | Epsilon: 0.09986
+Episode 27 | Total reward: 17.0 | Epsilon: 0.09986
+Episode 28 | Total reward: 17.0 | Epsilon: 0.09985
+Episode 29 | Total reward: 17.0 | Epsilon: 0.09985
+Episode 30 | Total reward: 17.0 | Epsilon: 0.09984
+Episode 31 | Total reward: 17.0 | Epsilon: 0.09984
+Episode 32 | Total reward: 17.0 | Epsilon: 0.09983
+Episode 33 | Total reward: 17.0 | Epsilon: 0.09983
+Episode 34 | Total reward: 17.0 | Epsilon: 0.09982
+Episode 35 | Total reward: 17.0 | Epsilon: 0.09982
+Episode 36 | Total reward: 17.0 | Epsilon: 0.09981
+Episode 37 | Total reward: 17.0 | Epsilon: 0.09981
+Episode 38 | Total reward: 17.0 | Epsilon: 0.09980
+Episode 39 | Total reward: 17.0 | Epsilon: 0.09980
+Episode 40 | Total reward: 17.0 | Epsilon: 0.09979
+Episode 41 | Total reward: 17.0 | Epsilon: 0.09979
+Episode 42 | Total reward: 17.0 | Epsilon: 0.09978
+Episode 43 | Total reward: 17.0 | Epsilon: 0.09978
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 249, in <module>
+    train()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 170, in train
+    x_t1_colored, _, terminal = game_state.frame_step(a_t)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\game\wrapped_flappy_bird.py", line 167, in frame_step
+    FPSCLOCK.tick(FPS)
+KeyboardInterrupt

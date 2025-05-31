@@ -1,0 +1,254 @@
+Episode 0 | Total reward: -5.390000000000001 | Epsilon: 0.10000
+Episode 1 | Total reward: -1.9300000000000002 | Epsilon: 0.09999
+Saved model at step 100
+Episode 2 | Total reward: -1.9900000000000002 | Epsilon: 0.09999
+Episode 3 | Total reward: -2.1700000000000004 | Epsilon: 0.09998
+Episode 4 | Total reward: -1.6600000000000004 | Epsilon: 0.09998
+Episode 5 | Total reward: -5.44 | Epsilon: 0.09997
+Episode 6 | Total reward: -1.6800000000000002 | Epsilon: 0.09997
+Episode 7 | Total reward: -1.7000000000000002 | Epsilon: 0.09996
+Episode 8 | Total reward: -2.1200000000000006 | Epsilon: 0.09996
+Episode 9 | Total reward: -5.41 | Epsilon: 0.09995
+Episode 10 | Total reward: -1.86 | Epsilon: 0.09995
+Episode 11 | Total reward: -5.4 | Epsilon: 0.09994
+Episode 12 | Total reward: -1.82 | Epsilon: 0.09994
+Episode 13 | Total reward: -5.37 | Epsilon: 0.09994
+Episode 14 | Total reward: -5.48 | Epsilon: 0.09993
+Episode 15 | Total reward: -2.0800000000000005 | Epsilon: 0.09993
+Episode 16 | Total reward: -5.41 | Epsilon: 0.09992
+Saved model at step 800
+Episode 17 | Total reward: -5.45 | Epsilon: 0.09992
+Episode 18 | Total reward: -1.9300000000000002 | Epsilon: 0.09991
+Episode 19 | Total reward: -5.46 | Epsilon: 0.09991
+Episode 20 | Total reward: -5.17 | Epsilon: 0.09991
+Episode 21 | Total reward: -1.8500000000000003 | Epsilon: 0.09990
+Episode 22 | Total reward: -5.38 | Epsilon: 0.09990
+Episode 23 | Total reward: -5.33 | Epsilon: 0.09989
+Episode 24 | Total reward: -5.37 | Epsilon: 0.09989
+Episode 25 | Total reward: -5.470000000000001 | Epsilon: 0.09988
+Episode 26 | Total reward: -5.37 | Epsilon: 0.09988
+Episode 27 | Total reward: -5.3 | Epsilon: 0.09988
+Episode 28 | Total reward: -5.390000000000001 | Epsilon: 0.09987
+Episode 29 | Total reward: -1.8 | Epsilon: 0.09987
+Episode 30 | Total reward: -5.41 | Epsilon: 0.09986
+Episode 31 | Total reward: -5.3 | Epsilon: 0.09986
+Episode 32 | Total reward: -5.41 | Epsilon: 0.09986
+Episode 33 | Total reward: -5.33 | Epsilon: 0.09985
+Episode 34 | Total reward: -5.36 | Epsilon: 0.09985
+Episode 35 | Total reward: -5.390000000000001 | Epsilon: 0.09985
+Episode 36 | Total reward: -5.430000000000001 | Epsilon: 0.09984
+Episode 37 | Total reward: -5.4 | Epsilon: 0.09984
+Episode 38 | Total reward: -5.45 | Epsilon: 0.09983
+Episode 39 | Total reward: -5.3 | Epsilon: 0.09983
+Episode 40 | Total reward: -5.390000000000001 | Epsilon: 0.09983
+Episode 41 | Total reward: -1.7300000000000002 | Epsilon: 0.09982
+Saved model at step 1800
+Episode 42 | Total reward: -1.82 | Epsilon: 0.09982
+Episode 43 | Total reward: -5.430000000000001 | Epsilon: 0.09981
+Episode 44 | Total reward: -5.42 | Epsilon: 0.09981
+Episode 45 | Total reward: -5.38 | Epsilon: 0.09980
+Episode 46 | Total reward: -5.37 | Epsilon: 0.09980
+Episode 47 | Total reward: -5.34 | Epsilon: 0.09980
+Episode 48 | Total reward: -5.29 | Epsilon: 0.09979
+Episode 49 | Total reward: -5.28 | Epsilon: 0.09979
+Episode 50 | Total reward: -5.32 | Epsilon: 0.09979
+Episode 51 | Total reward: -5.28 | Epsilon: 0.09979
+Episode 52 | Total reward: -5.32 | Epsilon: 0.09978
+Episode 53 | Total reward: -5.34 | Epsilon: 0.09978
+Episode 54 | Total reward: -5.48 | Epsilon: 0.09977
+Episode 55 | Total reward: -5.4 | Epsilon: 0.09977
+Episode 56 | Total reward: -5.42 | Epsilon: 0.09977
+Episode 57 | Total reward: -5.32 | Epsilon: 0.09976
+Episode 58 | Total reward: -5.3100000000000005 | Epsilon: 0.09976
+Episode 59 | Total reward: -5.4 | Epsilon: 0.09975
+Episode 60 | Total reward: -1.8500000000000003 | Epsilon: 0.09975
+Episode 61 | Total reward: -5.3100000000000005 | Epsilon: 0.09975
+Episode 62 | Total reward: -5.38 | Epsilon: 0.09974
+Episode 63 | Total reward: -5.3 | Epsilon: 0.09974
+Episode 64 | Total reward: -5.3500000000000005 | Epsilon: 0.09974
+Episode 65 | Total reward: -5.32 | Epsilon: 0.09973
+Episode 66 | Total reward: -5.3100000000000005 | Epsilon: 0.09973
+Episode 67 | Total reward: -5.45 | Epsilon: 0.09973
+Episode 68 | Total reward: -5.32 | Epsilon: 0.09972
+Episode 69 | Total reward: -5.3100000000000005 | Epsilon: 0.09972
+Episode 70 | Total reward: -5.42 | Epsilon: 0.09971
+Episode 71 | Total reward: -5.45 | Epsilon: 0.09971
+Episode 72 | Total reward: -5.3500000000000005 | Epsilon: 0.09971
+Episode 73 | Total reward: -5.37 | Epsilon: 0.09970
+Episode 74 | Total reward: -5.3100000000000005 | Epsilon: 0.09970
+Episode 75 | Total reward: -5.34 | Epsilon: 0.09970
+Episode 76 | Total reward: -5.29 | Epsilon: 0.09969
+Episode 77 | Total reward: -5.3100000000000005 | Epsilon: 0.09969
+Episode 78 | Total reward: -5.29 | Epsilon: 0.09969
+Episode 79 | Total reward: -5.3 | Epsilon: 0.09968
+Episode 80 | Total reward: -5.430000000000001 | Epsilon: 0.09968
+Episode 81 | Total reward: -5.29 | Epsilon: 0.09968
+Episode 82 | Total reward: -5.3500000000000005 | Epsilon: 0.09967
+Episode 83 | Total reward: -5.32 | Epsilon: 0.09967
+Episode 84 | Total reward: -5.3 | Epsilon: 0.09967
+Episode 85 | Total reward: -5.29 | Epsilon: 0.09966
+Episode 86 | Total reward: -5.28 | Epsilon: 0.09966
+Episode 87 | Total reward: -5.4 | Epsilon: 0.09966
+Episode 88 | Total reward: -5.46 | Epsilon: 0.09965
+Episode 89 | Total reward: -5.46 | Epsilon: 0.09965
+Episode 90 | Total reward: -2.1000000000000005 | Epsilon: 0.09964
+Episode 91 | Total reward: -5.3 | Epsilon: 0.09964
+Episode 92 | Total reward: -5.34 | Epsilon: 0.09964
+Episode 93 | Total reward: -2.1200000000000006 | Epsilon: 0.09963
+Episode 94 | Total reward: -5.45 | Epsilon: 0.09963
+Episode 95 | Total reward: -5.37 | Epsilon: 0.09962
+Episode 96 | Total reward: -5.34 | Epsilon: 0.09962
+Episode 97 | Total reward: -1.9500000000000002 | Epsilon: 0.09961
+Episode 98 | Total reward: -5.3100000000000005 | Epsilon: 0.09961
+Episode 99 | Total reward: -1.7600000000000002 | Epsilon: 0.09961
+Episode 100 | Total reward: -1.6800000000000004 | Epsilon: 0.09960
+Episode 101 | Total reward: -5.38 | Epsilon: 0.09960
+Episode 102 | Total reward: -5.33 | Epsilon: 0.09959
+Episode 103 | Total reward: -1.8300000000000003 | Epsilon: 0.09959
+Episode 104 | Total reward: -5.3100000000000005 | Epsilon: 0.09959
+Episode 105 | Total reward: -1.84 | Epsilon: 0.09958
+Episode 106 | Total reward: -5.45 | Epsilon: 0.09958
+Episode 107 | Total reward: -1.8300000000000003 | Epsilon: 0.09957
+Episode 108 | Total reward: -1.7000000000000002 | Epsilon: 0.09957
+Episode 109 | Total reward: -1.8300000000000003 | Epsilon: 0.09956
+Episode 110 | Total reward: -2.0800000000000005 | Epsilon: 0.09956
+Episode 111 | Total reward: -1.9400000000000002 | Epsilon: 0.09955
+Episode 112 | Total reward: -1.8300000000000003 | Epsilon: 0.09955
+Episode 113 | Total reward: -1.82 | Epsilon: 0.09954
+Episode 114 | Total reward: -1.8100000000000003 | Epsilon: 0.09954
+Episode 115 | Total reward: -5.36 | Epsilon: 0.09953
+Episode 116 | Total reward: -1.84 | Epsilon: 0.09953
+Episode 117 | Total reward: -1.6800000000000002 | Epsilon: 0.09952
+Episode 118 | Total reward: -5.45 | Epsilon: 0.09952
+Episode 119 | Total reward: -1.7100000000000004 | Epsilon: 0.09951
+Episode 120 | Total reward: -2.1500000000000004 | Epsilon: 0.09951
+Episode 121 | Total reward: -2.0100000000000002 | Epsilon: 0.09950
+Episode 122 | Total reward: -1.86 | Epsilon: 0.09950
+Episode 123 | Total reward: -2.0800000000000005 | Epsilon: 0.09949
+Episode 124 | Total reward: -1.84 | Epsilon: 0.09949
+Episode 125 | Total reward: -2.0400000000000005 | Epsilon: 0.09948
+Episode 126 | Total reward: -1.6600000000000004 | Epsilon: 0.09948
+Episode 127 | Total reward: -1.8700000000000003 | Epsilon: 0.09948
+Episode 128 | Total reward: 2.9400000000000053 | Epsilon: 0.09947
+Episode 129 | Total reward: -2.1000000000000005 | Epsilon: 0.09946
+Episode 130 | Total reward: -1.7400000000000002 | Epsilon: 0.09946
+Episode 131 | Total reward: -1.7600000000000002 | Epsilon: 0.09945
+Episode 132 | Total reward: -5.470000000000001 | Epsilon: 0.09945
+Episode 133 | Total reward: -1.8700000000000003 | Epsilon: 0.09944
+Episode 134 | Total reward: -1.6900000000000004 | Epsilon: 0.09944
+Episode 135 | Total reward: -2.1900000000000004 | Epsilon: 0.09943
+Episode 136 | Total reward: -1.7300000000000002 | Epsilon: 0.09943
+Episode 137 | Total reward: -5.430000000000001 | Epsilon: 0.09942
+Episode 138 | Total reward: -1.7600000000000002 | Epsilon: 0.09942
+Episode 139 | Total reward: -2.1000000000000005 | Epsilon: 0.09941
+Episode 140 | Total reward: -1.9600000000000002 | Epsilon: 0.09941
+Episode 141 | Total reward: -2.0700000000000003 | Epsilon: 0.09940
+Episode 142 | Total reward: -1.6500000000000001 | Epsilon: 0.09940
+Episode 143 | Total reward: -5.36 | Epsilon: 0.09939
+Episode 144 | Total reward: -2.0700000000000003 | Epsilon: 0.09939
+Episode 145 | Total reward: -1.6900000000000002 | Epsilon: 0.09938
+Episode 146 | Total reward: -1.6700000000000004 | Epsilon: 0.09938
+Episode 147 | Total reward: -2.0300000000000002 | Epsilon: 0.09937
+Episode 148 | Total reward: -5.470000000000001 | Epsilon: 0.09937
+Episode 149 | Total reward: -2.0300000000000002 | Epsilon: 0.09936
+Episode 150 | Total reward: -2.2100000000000004 | Epsilon: 0.09936
+Episode 151 | Total reward: -1.6900000000000002 | Epsilon: 0.09935
+Episode 152 | Total reward: -5.470000000000001 | Epsilon: 0.09935
+Episode 153 | Total reward: -5.36 | Epsilon: 0.09935
+Episode 154 | Total reward: -5.37 | Epsilon: 0.09934
+Episode 155 | Total reward: -2.0300000000000002 | Epsilon: 0.09934
+Episode 156 | Total reward: -1.7100000000000002 | Epsilon: 0.09933
+Episode 157 | Total reward: -2.2 | Epsilon: 0.09933
+Episode 158 | Total reward: -1.7700000000000002 | Epsilon: 0.09932
+Episode 159 | Total reward: -1.7800000000000002 | Epsilon: 0.09932
+Episode 160 | Total reward: -1.7800000000000002 | Epsilon: 0.09931
+Episode 161 | Total reward: -2.3000000000000003 | Epsilon: 0.09931
+Episode 162 | Total reward: -1.7500000000000004 | Epsilon: 0.09930
+Episode 163 | Total reward: -1.6900000000000002 | Epsilon: 0.09930
+Episode 164 | Total reward: -5.44 | Epsilon: 0.09929
+Episode 165 | Total reward: -1.8500000000000003 | Epsilon: 0.09929
+Episode 166 | Total reward: -1.9100000000000004 | Epsilon: 0.09928
+Episode 167 | Total reward: -2.14 | Epsilon: 0.09928
+Episode 168 | Total reward: -1.7200000000000002 | Epsilon: 0.09927
+Episode 169 | Total reward: -1.7500000000000002 | Epsilon: 0.09927
+Episode 170 | Total reward: -1.7300000000000002 | Epsilon: 0.09926
+Episode 171 | Total reward: -1.8900000000000003 | Epsilon: 0.09926
+Episode 172 | Total reward: -2.0700000000000003 | Epsilon: 0.09925
+Episode 173 | Total reward: -2.1000000000000005 | Epsilon: 0.09925
+Episode 174 | Total reward: -1.82 | Epsilon: 0.09924
+Episode 175 | Total reward: -2.0000000000000004 | Epsilon: 0.09924
+Episode 176 | Total reward: -1.7900000000000003 | Epsilon: 0.09923
+Episode 177 | Total reward: -1.8300000000000003 | Epsilon: 0.09923
+Episode 178 | Total reward: -1.7400000000000002 | Epsilon: 0.09922
+Episode 179 | Total reward: -5.46 | Epsilon: 0.09922
+Episode 180 | Total reward: -2.0300000000000002 | Epsilon: 0.09921
+Episode 181 | Total reward: -1.7000000000000002 | Epsilon: 0.09921
+Episode 182 | Total reward: -1.9300000000000002 | Epsilon: 0.09920
+Episode 183 | Total reward: -1.7400000000000002 | Epsilon: 0.09920
+Episode 184 | Total reward: -1.7100000000000002 | Epsilon: 0.09919
+Episode 185 | Total reward: 2.8800000000000052 | Epsilon: 0.09919
+Episode 186 | Total reward: -1.7100000000000002 | Epsilon: 0.09918
+Episode 187 | Total reward: 3.1500000000000017 | Epsilon: 0.09917
+Episode 188 | Total reward: -2.0800000000000005 | Epsilon: 0.09917
+Episode 189 | Total reward: 3.2600000000000002 | Epsilon: 0.09916
+Episode 190 | Total reward: -5.430000000000001 | Epsilon: 0.09916
+Episode 191 | Total reward: -1.6800000000000004 | Epsilon: 0.09915
+Episode 192 | Total reward: -1.7300000000000002 | Epsilon: 0.09915
+Episode 193 | Total reward: -1.6700000000000004 | Epsilon: 0.09914
+Episode 194 | Total reward: -1.6600000000000004 | Epsilon: 0.09914
+Episode 195 | Total reward: -1.9500000000000002 | Epsilon: 0.09913
+Episode 196 | Total reward: -1.6600000000000001 | Epsilon: 0.09913
+Episode 197 | Total reward: -1.8500000000000003 | Epsilon: 0.09912
+Episode 198 | Total reward: 2.800000000000005 | Epsilon: 0.09911
+Episode 199 | Total reward: -1.7600000000000002 | Epsilon: 0.09911
+Episode 200 | Total reward: -1.9800000000000002 | Epsilon: 0.09911
+Episode 201 | Total reward: -1.7600000000000002 | Epsilon: 0.09910
+Episode 202 | Total reward: -1.6800000000000002 | Epsilon: 0.09910
+Saved model at step 9200
+Episode 203 | Total reward: 3.23 | Epsilon: 0.09909
+Episode 204 | Total reward: -1.7800000000000002 | Epsilon: 0.09908
+Episode 205 | Total reward: -1.9200000000000002 | Epsilon: 0.09908
+Episode 206 | Total reward: -1.8500000000000003 | Epsilon: 0.09907
+Episode 207 | Total reward: -2.0000000000000004 | Epsilon: 0.09907
+Episode 208 | Total reward: -1.7200000000000002 | Epsilon: 0.09906
+Episode 209 | Total reward: -1.8800000000000001 | Epsilon: 0.09906
+Episode 210 | Total reward: -1.8800000000000001 | Epsilon: 0.09906
+Episode 211 | Total reward: -2.0200000000000005 | Epsilon: 0.09905
+Episode 212 | Total reward: -1.7000000000000002 | Epsilon: 0.09905
+Episode 213 | Total reward: -1.7100000000000002 | Epsilon: 0.09904
+Episode 214 | Total reward: 2.8500000000000054 | Epsilon: 0.09903
+Episode 215 | Total reward: -1.7000000000000002 | Epsilon: 0.09903
+Episode 216 | Total reward: -1.6600000000000004 | Epsilon: 0.09902
+Episode 217 | Total reward: -1.8700000000000003 | Epsilon: 0.09902
+Episode 218 | Total reward: -1.7200000000000004 | Epsilon: 0.09901
+Episode 219 | Total reward: 3.2000000000000006 | Epsilon: 0.09900
+Episode 220 | Total reward: -1.7200000000000002 | Epsilon: 0.09900
+Episode 221 | Total reward: -1.6600000000000004 | Epsilon: 0.09899
+Episode 222 | Total reward: -1.6700000000000004 | Epsilon: 0.09899
+Episode 223 | Total reward: 2.9800000000000053 | Epsilon: 0.09898
+Episode 224 | Total reward: -1.7000000000000002 | Epsilon: 0.09898
+Episode 225 | Total reward: -1.9600000000000002 | Epsilon: 0.09897
+Episode 226 | Total reward: -1.6900000000000002 | Epsilon: 0.09897
+Episode 227 | Total reward: -5.430000000000001 | Epsilon: 0.09896
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 255, in <module>
+    test()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 181, in train
+    s_t = s_t1
+        ^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 117, in learn
+    loss = self.loss_func(q_eval, q_target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\loss.py", line 535, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\functional.py", line 3339, in mse_loss
+    return torch._C._nn.mse_loss(expanded_input, expanded_target, _Reduction.get_enum(reduction))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

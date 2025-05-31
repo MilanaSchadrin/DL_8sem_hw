@@ -1,0 +1,7 @@
+{"time":"2025-05-30T20:41:41.6362251+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\milan\\Documents\\Uni\\Alg\\DL\\DL_8sem_hw-1\\hw6\\wandb\\run-20250530_204141-iudnlpcx\\logs\\debug-core.log"}
+{"time":"2025-05-30T20:41:41.7536277+03:00","level":"INFO","msg":"created new stream","id":"iudnlpcx"}
+{"time":"2025-05-30T20:41:41.7536277+03:00","level":"INFO","msg":"stream: started","id":"iudnlpcx"}
+{"time":"2025-05-30T20:41:41.7536277+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"iudnlpcx"}
+{"time":"2025-05-30T20:41:41.7536277+03:00","level":"INFO","msg":"handler: started","stream_id":"iudnlpcx"}
+{"time":"2025-05-30T20:41:41.7536277+03:00","level":"INFO","msg":"sender: started","stream_id":"iudnlpcx"}
+{"time":"2025-05-30T20:41:42.106018+03:00","level":"INFO","msg":"Starting system monitor"}

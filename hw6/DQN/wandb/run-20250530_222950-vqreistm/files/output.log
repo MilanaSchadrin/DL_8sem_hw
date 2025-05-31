@@ -1,0 +1,20 @@
+No model found.
+Episode 0 | Total reward: -5.37 | Epsilon: 3637978807091712135889574090809537623235218071220549028291190468527937903186836032431662498624368129801519259472892680055984834678371168249253952708031575523512861144094013915136.00000
+Episode 1 | Total reward: -5.3100000000000005 | Epsilon: inf
+Saved model at step 100
+Episode 2 | Total reward: -5.37 | Epsilon: inf
+Episode 3 | Total reward: -5.36 | Epsilon: inf
+Episode 4 | Total reward: -5.42 | Epsilon: inf
+Saved model at step 200
+Episode 5 | Total reward: -5.33 | Epsilon: inf
+Episode 6 | Total reward: -5.33 | Epsilon: inf
+Episode 7 | Total reward: -5.3500000000000005 | Epsilon: inf
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 255, in <module>
+    train()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 173, in train
+    x_t1_colored, reward, terminal= game_state.frame_step(a_t)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\game\wrapped_flappy_bird.py", line 169, in frame_step
+    FPSCLOCK.tick(FPS)
+KeyboardInterrupt

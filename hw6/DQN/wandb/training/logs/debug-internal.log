@@ -1,0 +1,24 @@
+{"time":"2025-05-31T02:36:05.6141284+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\milan\\Documents\\Uni\\Alg\\DL\\DL_8sem_hw-1\\hw6\\wandb\\run-20250531_023605-kzsxpp6e\\logs\\debug-core.log"}
+{"time":"2025-05-31T02:36:05.7264093+03:00","level":"INFO","msg":"created new stream","id":"kzsxpp6e"}
+{"time":"2025-05-31T02:36:05.7264093+03:00","level":"INFO","msg":"stream: started","id":"kzsxpp6e"}
+{"time":"2025-05-31T02:36:05.7264093+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"kzsxpp6e"}
+{"time":"2025-05-31T02:36:05.7264093+03:00","level":"INFO","msg":"sender: started","stream_id":"kzsxpp6e"}
+{"time":"2025-05-31T02:36:05.7264093+03:00","level":"INFO","msg":"handler: started","stream_id":"kzsxpp6e"}
+{"time":"2025-05-31T02:36:06.0548118+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-31T07:54:25.206091+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/shadrina-mi-mipt/flappy-bird-dqn/kzsxpp6e/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-05-31T09:08:27.3001777+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/shadrina-mi-mipt/flappy-bird-dqn/kzsxpp6e/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-05-31T09:08:29.575259+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/shadrina-mi-mipt/flappy-bird-dqn/kzsxpp6e/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-05-31T13:39:25.510677+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.32.4:63460->35.186.228.49:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-05-31T13:39:27.8687434+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-05-31T13:39:28.9259619+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/shadrina-mi-mipt/flappy-bird-dqn/kzsxpp6e/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-05-31T13:39:30.9453567+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/shadrina-mi-mipt/flappy-bird-dqn/kzsxpp6e/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-05-31T13:39:32.7728509+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-05-31T16:40:43.2550919+03:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/shadrina-mi-mipt/flappy-bird-dqn/kzsxpp6e/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-05-31T16:46:03.5764997+03:00","level":"INFO","msg":"stream: closing","id":"kzsxpp6e"}
+{"time":"2025-05-31T16:46:03.5775397+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-31T16:46:03.5973879+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-31T16:46:04.5270546+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-31T16:46:04.7979324+03:00","level":"INFO","msg":"handler: closed","stream_id":"kzsxpp6e"}
+{"time":"2025-05-31T16:46:04.7979324+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"kzsxpp6e"}
+{"time":"2025-05-31T16:46:04.798991+03:00","level":"INFO","msg":"sender: closed","stream_id":"kzsxpp6e"}
+{"time":"2025-05-31T16:46:04.798991+03:00","level":"INFO","msg":"stream: closed","id":"kzsxpp6e"}

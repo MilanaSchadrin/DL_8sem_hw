@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 255, in <module>
+    train()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 163, in train
+    agent.load_model()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 132, in load_model
+    self.eval_net.load_state_dict(checkpoint['eval'])
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 2153, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for NET:
+	Missing key(s) in state_dict: "conv1.1.weight", "conv1.1.bias", "conv1.1.running_mean", "conv1.1.running_var", "conv2.1.weight", "conv2.1.bias", "conv2.1.running_mean", "conv2.1.running_var", "conv3.1.weight", "conv3.1.bias", "conv3.1.running_mean", "conv3.1.running_var".
