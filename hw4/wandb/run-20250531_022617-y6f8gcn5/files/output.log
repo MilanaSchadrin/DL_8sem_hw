@@ -1,0 +1,57 @@
+Training SimCLR Encoder
+SimCLR Pretrain Epoch 1/5: 100%|██████████████████████████████████████████| 313/313 [00:45<00:00,  6.81it/s, loss=3.59]
+SimCLR Pretrain Epoch 2/5: 100%|███████████████████████████████████████████| 313/313 [00:46<00:00,  6.69it/s, loss=1.5]
+SimCLR Pretrain Epoch 3/5: 100%|██████████████████████████████████████████| 313/313 [00:50<00:00,  6.22it/s, loss=1.22]
+SimCLR Pretrain Epoch 4/5: 100%|███████████████████████████████████████████| 313/313 [00:45<00:00,  6.94it/s, loss=1.2]
+SimCLR Pretrain Epoch 5/5: 100%|██████████████████████████████████████████| 313/313 [00:45<00:00,  6.92it/s, loss=1.19]
+Files already downloaded and verified
+Epoch 1: Train Acc=0.1893, Train Loss=23.0916
+Epoch 1: Val Acc=0.1072, Val Loss=2.4115
+Epoch 2: Train Acc=0.1999, Train Loss=8.4742
+Epoch 2: Val Acc=0.1592, Val Loss=3.8492
+Epoch 3: Train Acc=0.1959, Train Loss=6.9337
+Epoch 3: Val Acc=0.1724, Val Loss=11.6846
+Epoch 4: Train Acc=0.1993, Train Loss=8.9138
+Epoch 4: Val Acc=0.2204, Val Loss=6.9716
+Epoch 5: Train Acc=0.1967, Train Loss=8.2919
+Epoch 5: Val Acc=0.2068, Val Loss=6.0761
+Training No SimCLR Encoder
+Files already downloaded and verified
+Epoch 1: Train Acc=0.1028, Train Loss=3.5852
+Epoch 1: Val Acc=0.0996, Val Loss=2.3106
+Epoch 2: Train Acc=0.1023, Train Loss=2.3133
+Epoch 2: Val Acc=0.0924, Val Loss=2.3090
+Epoch 3: Train Acc=0.1007, Train Loss=2.3133
+Epoch 3: Val Acc=0.0904, Val Loss=2.3164
+Epoch 4: Train Acc=0.0960, Train Loss=2.3149
+Epoch 4: Val Acc=0.1060, Val Loss=2.3025
+Epoch 5: Train Acc=0.0955, Train Loss=2.3146
+Epoch 5: Val Acc=0.0924, Val Loss=2.3208
+Training ResNet18
+C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Files already downloaded and verified
+Epoch 1: Train Acc=0.1165, Train Loss=6.5711
+Epoch 1: Val Acc=0.1556, Val Loss=2.2406
+Epoch 2: Train Acc=0.1537, Train Loss=2.3620
+Epoch 2: Val Acc=0.1784, Val Loss=2.8753
+Epoch 3: Train Acc=0.1803, Train Loss=2.2904
+Epoch 3: Val Acc=0.1364, Val Loss=17.6366
+Epoch 4: Train Acc=0.1844, Train Loss=2.1534
+Epoch 4: Val Acc=0.1480, Val Loss=2.0728
+Epoch 5: Train Acc=0.1701, Train Loss=2.1311
+Epoch 5: Val Acc=0.1904, Val Loss=2.0421
+Training ResNet18 FrozenEncoder
+Files already downloaded and verified
+Epoch 1: Train Acc=0.1271, Train Loss=6.2388
+Epoch 1: Val Acc=0.0916, Val Loss=2.5799
+Epoch 2: Train Acc=0.1660, Train Loss=2.2512
+Epoch 2: Val Acc=0.1080, Val Loss=100.0577
+Epoch 3: Train Acc=0.1656, Train Loss=2.2335
+Epoch 3: Val Acc=0.1524, Val Loss=2.9949
+Epoch 4: Train Acc=0.1716, Train Loss=2.2726
+Epoch 4: Val Acc=0.1616, Val Loss=2.1316
+Epoch 5: Train Acc=0.1885, Train Loss=2.0511
+Epoch 5: Val Acc=0.1340, Val Loss=5.0888
