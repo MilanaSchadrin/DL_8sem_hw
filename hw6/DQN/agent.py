@@ -242,7 +242,7 @@ def test():
             break
 
 
-# ----------------------------- MAIN ----------------------------- #
+
 if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument('-m', '--mode', choices=['train', 'test'], required=True, help="train or test")
