@@ -1,4 +1,6 @@
 import torch
+from model import EncoderDecoder
+import numpy as np
 
 BOS_TOKEN = '<s>'
 EOS_TOKEN = '</s>'
@@ -10,19 +12,17 @@ else:
     from torch import FloatTensor, LongTensor
     DEVICE = torch.device('cpu')
 
-def tokens_to_words(word_filed, token_tensor):
-    tokens = token_tensor.view(-1).tolist()
+def tokens_to_words(word_filed, tokens):
     return [word_filed.vocab.itos[token] for token in tokens]
 
-def words_to_tokens(word_field, word_list):
-    tokens = [word_field.vocab.stoi.get(word, word_field.vocab.stoi['<unk>']) 
-              for word in word_list]
-    tokens = [word_field.vocab.stoi[BOS_TOKEN]] + tokens + [word_field.vocab.stoi[EOS_TOKEN]]
-    return torch.tensor(tokens).unsqueeze(1) 
+def words_to_tokens(word_field, word):
+    tokens = [BOS_TOKEN] + word_field.preprocess(word) + [EOS_TOKEN]
+    return torch.tensor([word_field.vocab.stoi[token] for token in tokens])
 
 def subsequent_mask(size):
-    mask = torch.ones(size, size, device=DEVICE).triu_()
-    return mask.unsqueeze(0) == 0
+    attn_shape = (1, size, size)
+    subsequent_mask = np.triu(np.ones(attn_shape), k=1).astype('uint8')
+    return torch.from_numpy(subsequent_mask).to(DEVICE) == 0
 
 def make_mask(source_inputs, target_inputs, pad_idx):
     source_mask = (source_inputs != pad_idx).unsqueeze(-2)
@@ -36,3 +36,24 @@ def convert_batch(batch, pad_idx=1):
     source_mask, target_mask = make_mask(source_inputs, target_inputs, pad_idx)
 
     return source_inputs, target_inputs, source_mask, target_mask
+
+def decoding_tokens(tensor, vocab, skip_tokens=('<pad>', '<sos>', '<eos>')):
+    sentences = []
+    skip_ids = [vocab.stoi[token] for token in skip_tokens if token in vocab.stoi]
+
+    for seq in tensor:
+        tokens = [
+            vocab.itos[token.item()]
+            for token in seq
+            if token.item() not in skip_ids
+        ]
+        sentences.append(" ".join(tokens))
+
+    return sentences
+
+def load_model(word_field, path):
+    model = EncoderDecoder(source_vocab_size=len(word_field.vocab), target_vocab_size=len(word_field.vocab)).to(DEVICE)
+    model.load_state_dict(torch.load(path, map_location=DEVICE, weights_only=True))
+    model.eval()
+
+    return model

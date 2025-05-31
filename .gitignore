@@ -14,3 +14,7 @@ hw3/__pycache__/
 hw3/datasets
 hw5/lfw-funneled/
 hw5/best_model_emb.pth
+hw3/models/
+hw3/results/model.pt
+hw3/saved_data
+
