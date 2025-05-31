@@ -1,0 +1,7 @@
+Результат сохранен в файл: comparison_results/comparison_Arina_20250531_180727.png
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 78, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 71, in main
+    matches, threshold = identify_face(ref_image, test_images, model, test_transform, device, ref_person, threshold=None)
+ValueError: too many values to unpack (expected 2)

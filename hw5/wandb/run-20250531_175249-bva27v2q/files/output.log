@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5\main.py", line 86, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5\main.py", line 51, in main
+    valid_classes = filter_classes(dataset_root, min_samples=2)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5\prepare_data.py", line 6, in filter_classes
+    for class_name in os.listdir(dataset_root):
+NameError: name 'os' is not defined

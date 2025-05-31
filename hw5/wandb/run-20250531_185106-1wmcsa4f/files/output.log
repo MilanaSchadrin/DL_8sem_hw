@@ -1,0 +1,10 @@
+peron ['arina', 'milana', 'sveta']
+пораэ arina
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 79, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 76, in main
+    print(evaluate_predictions(gt_file, ref_person, matches, threshold, output_file='predictions_report.txt'))
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\visualize_identify.py", line 66, in evaluate_predictions
+    wandb.log({
+NameError: name 'wandb' is not defined

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 86, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 78, in main
+    matches, threshold = identify_face(ref_image, test_images, model, test_transform, device, ref_person, threshold=None)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\identify_face.py", line 31, in identify_face
+    raise ValueError(f"Задано 15 изображений, найдено {len(test_paths)}")
+ValueError: Задано 15 изображений, найдено 0

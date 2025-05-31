@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5\main.py", line 85, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5\main.py", line 59, in main
+    model = FaceNet().to(device)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5\model.py", line 8, in __init__
+    self.backbone = InceptionResnetV1(pretrained=pretrained, classify=False)
+NameError: name 'InceptionResnetV1' is not defined
