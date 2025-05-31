@@ -1,0 +1,28 @@
+stages:
+  load:
+    cmd: python load.py
+    deps:
+      - load.py
+    outs:
+      - images_background/
+      - images_evaluation/
+    always_changed: true
+    
+  train:
+    cmd: python train.py
+    deps:
+      - train.py
+      - model.py
+      - data.py
+    outs:
+      - protonet_model.pt
+
+  test:
+    cmd: python test.py
+    deps:
+      - test.py
+      - protonet_model.pt
+      - data.py
+    outs:
+      - test_vis/
+      - predictions.png

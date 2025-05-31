@@ -4,14 +4,7 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 
 def euclidean_dist(x, y):
-  """
-  Computes euclidean distance btw x and y
-  Args:
-      x (torch.Tensor): shape (n, d). n usually n_way*n_query
-      y (torch.Tensor): shape (m, d). m usually n_way
-  Returns:
-      torch.Tensor: shape(n, m). For each query, the distances to each centroid
-  """
+
   n = x.size(0)
   m = y.size(0)
   d = x.size(1)
@@ -89,23 +82,19 @@ class ProtoNet(nn.Module):
         x_support = sample_images[:, :n_support]
         x_query = sample_images[:, n_support:]
    
-    #target indices are 0 ... n_way-1
         target_inds = torch.arange(0, n_way).view(n_way, 1, 1).expand(n_way, n_query, 1).long()
         target_inds = Variable(target_inds, requires_grad=False)
         target_inds = target_inds.cuda()
    
-    #encode images of the support and the query set
         x = torch.cat([x_support.contiguous().view(n_way * n_support, *x_support.size()[2:]),
                    x_query.contiguous().view(n_way * n_query, *x_query.size()[2:])], 0)
         z = self.encoder.forward(x)
-        z_dim = z.size(-1) #usually 64
+        z_dim = z.size(-1)
         z_proto = z[:n_way*n_support].view(n_way, n_support, z_dim).mean(1)
         z_query = z[n_way*n_support:]
 
-    #compute distances
         dists = euclidean_dist(z_query, z_proto)
     
-    #compute probabilities
         log_p_y = F.log_softmax(-dists, dim=1).view(n_way, n_query, -1)
    
         loss_val = -log_p_y.gather(2, target_inds).squeeze().view(-1).mean()

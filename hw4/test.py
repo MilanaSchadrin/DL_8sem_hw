@@ -4,31 +4,9 @@ from tqdm import trange
 from train import model
 import matplotlib.pyplot as plt
 import numpy as np
-
-def visualize_prediction(sample, y_hat, save_path='predictions.png'):
-    """
-    Визуализация предсказаний модели на одном эпизоде
-    Args:
-        sample (dict): содержит 'images' — тензор формы [n_way, n_support + n_query, 3, 28, 28]
-        y_hat (Tensor): предсказания модели (форма: [n_way, n_query])
-    """
-    n_way = sample['n_way']
-    n_query = sample['n_query']
-    query_images = sample['images'][:, sample['n_support']:].cpu().numpy()
-
-    fig, axs = plt.subplots(n_way, n_query, figsize=(n_query * 2, n_way * 2))
-
-    for i in range(n_way):
-        for j in range(n_query):
-            ax = axs[i, j]
-            img = query_images[i, j].transpose(1, 2, 0).astype(np.uint8)
-            ax.imshow(img)
-            ax.axis('off')
-            ax.set_title(f'True: {i}\nPred: {y_hat[i, j].item()}')
-
-    plt.tight_layout()
-    plt.savefig(save_path)
-    plt.close()
+from visualis import visualize_prediction, visualize_n_predictions
+import yaml
+import torch
 
 def test(model, test_x, test_y, n_way, n_support, n_query, test_episode):
     """
@@ -55,12 +33,19 @@ def test(model, test_x, test_y, n_way, n_support, n_query, test_episode):
     avg_acc = running_acc / test_episode
     print('Test results -- Loss: {:.4f} Acc: {:.4f}'.format(avg_loss, avg_acc))
 
-n_way = 5
-n_support = 5
-n_query = 5
-
-test_x = testx
-test_y = testy
-
-test_episode = 1000
-test(model, test_x, test_y, n_way, n_support, n_query, test_episode)
+if __name__ == "__main__":
+    params = yaml.safe_load(open("params.yaml"))
+    n_way = params["n_way"]
+    n_support =params["n_support"]
+    n_query = params["n_query"]
+    test_x = testx
+    test_y = testy
+    model = load_protonet_conv(x_dim=(3,28,28),
+    hid_dim=64,
+    z_dim=64)
+    model.load_state_dict(torch.load("protonet_model.pt"))
+    model.eval()
+    model.cuda()
+    test_episode = params["test_episode"]
+    test(model, test_x, test_y, n_way, n_support, n_query, test_episode)
+    visualize_n_predictions(model, test_x, test_y, n_way, n_support, n_query, n_images=30)

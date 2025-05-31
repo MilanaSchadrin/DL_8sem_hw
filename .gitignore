@@ -1,8 +1,15 @@
 __pycache__/
 *.py[cod]
+*$py.class
 
 hw4/images_evaluation/
 hw4/images_background/
 hw4/runs/
+hw4/cifar_data/
+hw4/data/cifar-10-python.tar.gz
+hw4/data
 images_background.zip
 images_evaluation.zip
+hw3/__pycache__/
+hw3/datasets
+
