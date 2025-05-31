@@ -1,0 +1,15 @@
+{"time":"2025-05-31T17:33:09.5473318+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\milan\\Documents\\Uni\\Alg\\DL\\DL_8sem_hw-1\\hw6\\wandb\\run-20250531_173309-tuzy7s8d\\logs\\debug-core.log"}
+{"time":"2025-05-31T17:33:09.6601634+03:00","level":"INFO","msg":"created new stream","id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:09.6601634+03:00","level":"INFO","msg":"stream: started","id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:09.6601634+03:00","level":"INFO","msg":"handler: started","stream_id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:09.6601634+03:00","level":"INFO","msg":"sender: started","stream_id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:09.6601634+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:10.0095762+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-31T17:33:12.5594745+03:00","level":"INFO","msg":"stream: closing","id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:12.5594745+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-31T17:33:12.5599832+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-31T17:33:13.235837+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-31T17:33:13.507611+03:00","level":"INFO","msg":"handler: closed","stream_id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:13.507611+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:13.507611+03:00","level":"INFO","msg":"sender: closed","stream_id":"tuzy7s8d"}
+{"time":"2025-05-31T17:33:13.5083152+03:00","level":"INFO","msg":"stream: closed","id":"tuzy7s8d"}

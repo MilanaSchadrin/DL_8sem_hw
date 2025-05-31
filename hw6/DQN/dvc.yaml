@@ -1,0 +1,26 @@
+stages:
+  train:
+    cmd: python agent.py
+    deps:
+      - game/wrapped_flappy_bird.py
+      - agent.py
+      - params.yaml 
+    outs:
+      - flappy_model.pth
+      - training_rewards.png
+    params:
+      - params.yaml
+
+  play:
+    cmd: python app.py
+    deps:
+      - app.py
+      - flappy_model.pth
+
+  test:
+    cmd: pytest test.py
+    deps:
+      - game/wrapped_flappy_bird.py
+      -  agent.py
+      -  test.py
+      - flappy_model.pth

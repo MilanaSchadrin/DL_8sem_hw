@@ -1,0 +1,37 @@
+stages:
+  train:
+    cmd: python app.py --mode train
+    deps:
+      - app.py
+      - game/train.py
+      - game/run_best.py
+      - game/wrapped_flappy_bird.py
+      - neat-config.txt
+      - params.yaml
+    outs:
+      - best_genome.pkl
+      - graphs/training_progress.png
+    params:
+      - params.yaml:
+          - game.modes
+          - neat.target_score
+
+  run:
+    cmd: python app.py --mode AI
+    deps:
+      - app.py
+      - best_genome.pkl
+      - params.yaml
+
+  play-human:
+    cmd: python app.py --mode human
+    deps:
+      - app.py
+      - params.yaml
+
+  test:
+    cmd: pytest test.py
+    deps:
+      - game/train.py
+      - game/run_best.py
+      - game/wrapped_flappy_bird.py

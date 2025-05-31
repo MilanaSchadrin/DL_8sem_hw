@@ -1,0 +1,8 @@
+game:
+  modes: ["AI", "human", "train"]  # Доступные режимы игры
+  default_mode: "AI"               # Режим по умолчанию
+  resolution: [288, 512]           # Разрешение экрана
+
+neat:
+  config_path: "neat-config.txt"    # Путь к конфигу NEAT
+  target_score: 500                 # Целевой счет для обучения

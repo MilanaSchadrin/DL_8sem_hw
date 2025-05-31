@@ -1,0 +1,101 @@
+No model found.
+Episode 0 | Total reward: 17 | Epsilon: 0.09999
+Episode 1 | Total reward: 17 | Epsilon: 0.09998
+Episode 2 | Total reward: 17 | Epsilon: 0.09997
+Episode 3 | Total reward: 17 | Epsilon: 0.09996
+Episode 4 | Total reward: 17 | Epsilon: 0.09995
+Episode 5 | Total reward: 18 | Epsilon: 0.09994
+Episode 6 | Total reward: 17 | Epsilon: 0.09993
+Episode 7 | Total reward: 17 | Epsilon: 0.09993
+Episode 8 | Total reward: 17 | Epsilon: 0.09992
+Episode 9 | Total reward: 17 | Epsilon: 0.09991
+Episode 10 | Total reward: 17 | Epsilon: 0.09990
+Episode 11 | Total reward: 17 | Epsilon: 0.09989
+Episode 12 | Total reward: 17 | Epsilon: 0.09988
+Episode 13 | Total reward: 17 | Epsilon: 0.09987
+Episode 14 | Total reward: 17 | Epsilon: 0.09986
+Episode 15 | Total reward: 17 | Epsilon: 0.09985
+Episode 16 | Total reward: 17 | Epsilon: 0.09984
+Episode 17 | Total reward: 17 | Epsilon: 0.09983
+Episode 18 | Total reward: 17 | Epsilon: 0.09982
+Episode 19 | Total reward: 17 | Epsilon: 0.09981
+Episode 20 | Total reward: 17 | Epsilon: 0.09980
+Episode 21 | Total reward: 17 | Epsilon: 0.09979
+Episode 22 | Total reward: 17 | Epsilon: 0.09979
+Episode 23 | Total reward: 17 | Epsilon: 0.09978
+Episode 24 | Total reward: 17 | Epsilon: 0.09977
+Episode 25 | Total reward: 17 | Epsilon: 0.09976
+Episode 26 | Total reward: 17 | Epsilon: 0.09975
+Episode 27 | Total reward: 17 | Epsilon: 0.09974
+Episode 28 | Total reward: 17 | Epsilon: 0.09973
+Episode 29 | Total reward: 18 | Epsilon: 0.09972
+Episode 30 | Total reward: 17 | Epsilon: 0.09971
+Episode 31 | Total reward: 17 | Epsilon: 0.09970
+Episode 32 | Total reward: 17 | Epsilon: 0.09969
+Episode 33 | Total reward: 17 | Epsilon: 0.09968
+Episode 34 | Total reward: 19 | Epsilon: 0.09967
+Saved model at step 1000
+Episode 35 | Total reward: 17 | Epsilon: 0.09966
+Episode 36 | Total reward: 17 | Epsilon: 0.09965
+Episode 37 | Total reward: 17 | Epsilon: 0.09964
+Episode 38 | Total reward: 18 | Epsilon: 0.09964
+Episode 39 | Total reward: 24 | Epsilon: 0.09962
+Episode 40 | Total reward: 30 | Epsilon: 0.09961
+Episode 41 | Total reward: 33 | Epsilon: 0.09960
+Episode 42 | Total reward: 38 | Epsilon: 0.09958
+Episode 43 | Total reward: 39 | Epsilon: 0.09956
+Episode 44 | Total reward: 38 | Epsilon: 0.09955
+Episode 45 | Total reward: 28 | Epsilon: 0.09953
+Episode 46 | Total reward: 38 | Epsilon: 0.09952
+Episode 47 | Total reward: 19 | Epsilon: 0.09951
+Episode 48 | Total reward: 27 | Epsilon: 0.09949
+Episode 49 | Total reward: 21 | Epsilon: 0.09948
+Episode 50 | Total reward: 38 | Epsilon: 0.09947
+Episode 51 | Total reward: 38 | Epsilon: 0.09945
+Episode 52 | Total reward: 25 | Epsilon: 0.09944
+Episode 53 | Total reward: 29 | Epsilon: 0.09943
+Episode 54 | Total reward: 38 | Epsilon: 0.09941
+Episode 55 | Total reward: 41 | Epsilon: 0.09939
+Episode 56 | Total reward: 38 | Epsilon: 0.09938
+Episode 57 | Total reward: 40 | Epsilon: 0.09936
+Episode 58 | Total reward: 27 | Epsilon: 0.09935
+Saved model at step 2000
+Episode 59 | Total reward: 38 | Epsilon: 0.09933
+Episode 60 | Total reward: 19 | Epsilon: 0.09932
+Episode 61 | Total reward: 17 | Epsilon: 0.09931
+Episode 62 | Total reward: 38 | Epsilon: 0.09930
+Episode 63 | Total reward: 21 | Epsilon: 0.09929
+Episode 64 | Total reward: 38 | Epsilon: 0.09927
+Episode 65 | Total reward: 23 | Epsilon: 0.09926
+Episode 66 | Total reward: 17 | Epsilon: 0.09925
+Episode 67 | Total reward: 38 | Epsilon: 0.09923
+Episode 68 | Total reward: 38 | Epsilon: 0.09922
+Episode 69 | Total reward: 29 | Epsilon: 0.09920
+Episode 70 | Total reward: 38 | Epsilon: 0.09919
+Episode 71 | Total reward: 27 | Epsilon: 0.09917
+Episode 72 | Total reward: 35 | Epsilon: 0.09916
+Episode 73 | Total reward: 24 | Epsilon: 0.09915
+Episode 74 | Total reward: 25 | Epsilon: 0.09914
+Episode 75 | Total reward: 42 | Epsilon: 0.09912
+Episode 76 | Total reward: 19 | Epsilon: 0.09911
+Episode 77 | Total reward: 38 | Epsilon: 0.09909
+Episode 78 | Total reward: 30 | Epsilon: 0.09908
+Episode 79 | Total reward: 38 | Epsilon: 0.09906
+Episode 80 | Total reward: 21 | Epsilon: 0.09905
+Episode 81 | Total reward: 40 | Epsilon: 0.09903
+Episode 82 | Total reward: 38 | Epsilon: 0.09902
+Episode 83 | Total reward: 22 | Epsilon: 0.09901
+Saved model at step 3000
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 240, in <module>
+    train()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 168, in train
+    x_t1 = preprocess(x_t1_colored).reshape(1, 1, 80, 80)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw-1\hw6\agent.py", line 134, in preprocess
+    frame = transform.resize(frame, (80, 80))
+            ^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\AppData\Local\Programs\Python\Python312\Lib\site-packages\lazy_loader\__init__.py", line 77, in __getattr__
+    def __getattr__(name):
+
+KeyboardInterrupt
