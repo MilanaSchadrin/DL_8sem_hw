@@ -118,13 +118,10 @@ class EncoderBlock(nn.Module):
 
 
 class Encoder(nn.Module):
-    def __init__(self, vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate):
+    def __init__(self, vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate,embeddings, save_probs=False):
         super().__init__()
 
-        self._emb = nn.Sequential(
-            nn.Embedding(vocab_size, d_model),
-            PositionalEncoding(d_model, dropout_rate)
-        )
+        self._emb = embeddings
 
         block = lambda: EncoderBlock(
             size=d_model,
@@ -135,11 +132,16 @@ class Encoder(nn.Module):
         self._blocks = nn.ModuleList([block() for _ in range(blocks_count)])
         self._norm = LayerNorm(d_model)
 
+        self.save_probs = save_probs
+        self.attn_probs = []
+
     def forward(self, inputs, mask):
         inputs = self._emb(inputs)
-
+        self.attn_probs = []
         for block in self._blocks:
             inputs = block(inputs, mask)
+            if self.save_probs:
+                self.attn_probs.append(block._self_attn._attn_probs)
 
         return self._norm(inputs)
 
@@ -166,14 +168,9 @@ class DecoderLayer(nn.Module):
 
 
 class Decoder(nn.Module):
-    def __init__(self, vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate):
+    def __init__(self, vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate, embeddings, save_probs = False):
         super().__init__()
-
-        self._emb = nn.Sequential(
-            nn.Embedding(vocab_size, d_model),
-            PositionalEncoding(d_model, dropout_rate)
-        )
-
+        self._emb = embeddings
         block = lambda: DecoderLayer(
             size=d_model,
             self_attn=MultiHeadedAttention(heads_count, d_model, dropout_rate),
@@ -184,11 +181,19 @@ class Decoder(nn.Module):
         self._blocks = nn.ModuleList([block() for _ in range(blocks_count)])
         self._norm = LayerNorm(d_model)
         self._out_layer = nn.Linear(d_model, vocab_size)
+        self.save_probs = save_probs
+        self.self_attn_probs = []
+        self.enc_attn_probs = []
 
     def forward(self, inputs, encoder_output, source_mask, target_mask):
         inputs = self._emb(inputs)
+        self.self_attn_probs = []
+        self.enc_attn_probs = []
         for block in self._blocks:
             inputs = block(inputs, encoder_output, source_mask, target_mask)
+            if self.save_probs:
+                self.self_attn_probs.append(block._self_attn._attn_probs)
+                self.enc_attn_probs.append(block._encoder_attn._attn_probs)
         return self._out_layer(self._norm(inputs))
 
 
@@ -203,30 +208,28 @@ class Generator(nn.Module):
         return F.log_softmax(self.proj(x), dim=-1)
 
 
-class Generator(nn.Module):
-    "Define standard linear + softmax generation step."
-    def __init__(self, d_model, vocab):
-        super(Generator, self).__init__()
-        self.proj = nn.Linear(d_model, vocab)
-
-    def forward(self, x):
-        return F.log_softmax(self.proj(x), dim=-1)
-
-
 class EncoderDecoder(nn.Module):
     """
     A standard Encoder-Decoder architecture. Base for this and many
     other models.
     """
     def __init__(self, source_vocab_size, target_vocab_size, d_model=256, d_ff=1024,
-                 blocks_count=4, heads_count=8, dropout_rate=0.1):
+                 blocks_count=4, heads_count=8, dropout_rate=0.1, save_probs=False,pretrained_embeddings=None):
         super(EncoderDecoder, self).__init__()
 
         self.d_model = d_model
-        self.encoder = Encoder(source_vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate)
-        self.decoder = Decoder(target_vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate)
-        # self.generator = Generator(d_model, target_vocab_size)
-
+        if pretrained_embeddings is not None:
+            ...
+        else:
+            self.encoder_emb = nn.Sequential(
+                    nn.Embedding(source_vocab_size, d_model),
+                    PositionalEncoding(d_model, dropout_rate)
+                )
+            self.decoder_emb = nn.Sequential(
+                    nn.Embedding(target_vocab_size, d_model),
+                    PositionalEncoding(d_model, dropout_rate))
+        self.encoder = Encoder(source_vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate,self.encoder_emb,save_probs)
+        self.decoder = Decoder(target_vocab_size, d_model, d_ff, blocks_count, heads_count, dropout_rate,self.decoder_emb,save_probs)
         for p in self.parameters():
             if p.dim() > 1:
                 nn.init.xavier_uniform_(p)
@@ -237,7 +240,7 @@ class EncoderDecoder(nn.Module):
 
 
 class NoamOpt(object):
-    def __init__(self,model, factor=2, warmup=4000, optimizer=None):
+    def __init__(self, model_size, model, factor=2, warmup=4000, optimizer=None):
         if optimizer is not None:
             self.optimizer = optimizer
         else:

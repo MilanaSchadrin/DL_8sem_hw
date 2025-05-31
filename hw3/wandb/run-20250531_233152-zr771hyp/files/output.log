@@ -1,0 +1,25 @@
+  0%|                                                                      | 0/3946 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\main.py", line 25, in <module>
+    main()
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\main.py", line 20, in main
+    fit(model, criterion, optimizer, train_iter, start_epoch=0, epochs_count=1, val_iter=test_iter)
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\train.py", line 60, in fit
+    train_loss = do_epoch(model, criterion, train_iter, epoch + start_epoch,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\train.py", line 18, in do_epoch
+    for i, batch in enumerate(data_iter):
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\.venv\Lib\site-packages\torchtext\data\iterator.py", line 156, in __iter__
+    yield Batch(minibatch, self.dataset, self.device)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\.venv\Lib\site-packages\torchtext\data\batch.py", line 34, in __init__
+    setattr(self, name, field.process(batch, device=device))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\.venv\Lib\site-packages\torchtext\data\field.py", line 237, in process
+    tensor = self.numericalize(padded, device=device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milan\Documents\Uni\Alg\DL\DL_8sem_hw\hw3\.venv\Lib\site-packages\torchtext\data\field.py", line 336, in numericalize
+    arr = [[self.vocab.stoi[x] for x in ex] for ex in arr]
+            ^^^^^^^^^^
+AttributeError: 'Field' object has no attribute 'vocab'
