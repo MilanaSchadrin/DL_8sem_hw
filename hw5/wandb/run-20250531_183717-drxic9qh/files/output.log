@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 79, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 76, in main
+    print(evaluate_predictions(gt_file, ref_person, matches, threshold, output_file='predictions_report.txt'))
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\visualize_identify.py", line 36, in evaluate_predictions
+    raise ValueError(f"Эталонный человек {reference_person} не найден в файле меток")
+ValueError: Эталонный человек Arina не найден в файле меток

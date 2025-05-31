@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 86, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 78, in main
+    matches, threshold = identify_face(ref_image, test_images, model, test_transform, device, ref_person, threshold=None)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\identify_face.py", line 28, in identify_face
+    test_paths = sorted(get_image_paths(test_folder))[:15]
+NameError: name 'get_image_paths' is not defined

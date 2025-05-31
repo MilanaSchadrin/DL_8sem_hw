@@ -1,0 +1,15 @@
+{"time":"2025-05-31T18:31:14.9494927+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\Марина\\Desktop\\hw_dl\\hw5\\hw5\\HW5_LAST\\wandb\\run-20250531_183114-nvjdc2wk\\logs\\debug-core.log"}
+{"time":"2025-05-31T18:31:16.8422156+03:00","level":"INFO","msg":"created new stream","id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:16.8422156+03:00","level":"INFO","msg":"stream: started","id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:16.8428848+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:16.8428848+03:00","level":"INFO","msg":"handler: started","stream_id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:16.8428848+03:00","level":"INFO","msg":"sender: started","stream_id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:17.1807589+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-31T18:31:18.5071934+03:00","level":"INFO","msg":"stream: closing","id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:18.5071934+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-31T18:31:18.5071934+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-31T18:31:19.6743562+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-31T18:31:19.9653256+03:00","level":"INFO","msg":"handler: closed","stream_id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:19.9653256+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:19.9653256+03:00","level":"INFO","msg":"sender: closed","stream_id":"nvjdc2wk"}
+{"time":"2025-05-31T18:31:19.966462+03:00","level":"INFO","msg":"stream: closed","id":"nvjdc2wk"}

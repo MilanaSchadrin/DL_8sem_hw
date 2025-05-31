@@ -1,0 +1,1 @@
+{"_step":0,"evaluation_recall":1,"evaluation_f1":0.9090909090909091,"threshold":0.24617950916290282,"evaluation_accuracy":0.9333333333333333,"evaluation_precision":0.8333333333333334,"_timestamp":1.74870714497366e+09,"_runtime":14.9429049,"_wandb":{"runtime":15}}

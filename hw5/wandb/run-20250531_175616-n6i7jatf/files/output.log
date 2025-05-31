@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 85, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 77, in main
+    matches, threshold = identify_face(ref_image, test_images, model, test_transform, device, ref_person, threshold=None)
+NameError: name 'identify_face' is not defined

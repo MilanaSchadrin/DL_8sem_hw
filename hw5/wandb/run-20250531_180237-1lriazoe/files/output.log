@@ -1,0 +1,14 @@
+Эталонное изображение: arina_basic.jpg
+Тестовые изображения: ['arina_1.jpg', 'arina_2.jpg', 'arina_3.jpg', 'arina_4.jpg', 'arina_5.jpg', 'milana_1.jpg', 'milana_2.jpg', 'milana_3.jpg', 'milana_4.jpg', 'milana_5.jpg', 'sveta_1.jpg', 'sveta_2.jpg', 'sveta_3.jpg', 'sveta_4.jpg', 'sveta_5.jpg']
+
+Автоматический порог: 0.1375
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 86, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 78, in main
+    matches, threshold = identify_face(ref_image, test_images, model, test_transform, device, ref_person, threshold=None)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\identify_face.py", line 58, in identify_face
+    visualize_comparison(reference_path, matches, non_matches, threshold,  ref_im)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\visualize_identify.py", line 147, in visualize_comparison
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+NameError: name 'datetime' is not defined

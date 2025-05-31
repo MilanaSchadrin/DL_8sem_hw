@@ -1,0 +1,16 @@
+name;arina;milana;sveta
+arina_1.jpg;1;0;0
+arina_2.jpg;1;0;0
+arina_3.jpg;1;0;0
+arina_4.jpg;1;0;0
+arina_5.jpg;1;0;0
+milana_1.jpg;0;1;0
+milana_2.jpg;0;1;0
+milana_3.jpg;0;1;0
+milana_4.jpg;0;1;0
+milana_5.jpg;0;1;0
+sveta_1.jpg;0;0;1
+sveta_2.jpg;0;0;1
+sveta_3.jpg;0;0;1
+sveta_4.jpg;0;0;1
+sveta_5.jpg;0;0;1

@@ -1,0 +1,31 @@
+stages:
+  download_data:
+    cmd: python get_data.py
+    deps:
+      - get_data.py
+    outs:
+      - lfw-funneled
+
+  train_and_identify:
+    cmd: python main.py
+    deps:
+      - main.py
+      - model.py
+      - prepare_data.py
+      - train.py
+      - visualize_identify.py
+      - evaluate_model.py
+      - identify_face.py
+      - lfw-funneled
+    outs:
+      - predictions_report.txt
+      - best_model_emb.pth
+   
+  test:
+    cmd: pytest test.py
+    deps:
+      - test.py
+      - main.py
+      - model.py
+      - get_data.py
+      - prepare_data.py

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 86, in <module>
+    main()
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\main.py", line 78, in main
+    matches, threshold = identify_face(ref_image, test_images, model, test_transform, device, ref_person, threshold=None)
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\identify_face.py", line 29, in identify_face
+    test_paths = sorted(get_image_paths(test_folder))[:15]
+  File "C:\Users\Марина\Desktop\hw_dl\hw5\hw5\HW5_LAST\visualize_identify.py", line 8, in get_image_paths
+    for path in glob(os.path.join(folder_path, '**', extension), recursive=True):
+NameError: name 'glob' is not defined
