@@ -17,4 +17,4 @@ make download_data
 ```
 make run
 ```
-
+[Ссылка на веса модели](https://drive.google.com/file/d/1J4B_sUTYPK0jTmqF6LRuDCSxt-tS_NKp/view?usp=sharing)
