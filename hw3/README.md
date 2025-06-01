@@ -8,7 +8,7 @@
 pip install -r requirements.txt
 ```
 ## Можно запустить с помощью команд
-### Основные neat
+### Основные
 Данные
 ```
 make data
