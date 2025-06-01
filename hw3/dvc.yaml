@@ -1,0 +1,74 @@
+stages:
+  prepare:
+    cmd: python data.py
+    deps:
+      - data.py
+      - datasets/news.csv
+    outs:
+      - data/saved_data/train/
+      - data/saved_data/test/
+      - data/saved_data/wordfield/
+
+  train:
+    cmd: python main.py --pretrained_embeddings=${pretrained_embeddings} --use_label_smoothing=${use_label_smoothing}
+    deps:
+      - train.py
+      - model.py
+      - stuff.py
+      - data.py
+      - label.py
+      - data/saved_data/
+    outs:
+      - results/model.pt
+    params:
+      - train.epochs
+      - train.d_model
+      - pretrained_embeddings
+      - use_label_smoothing
+
+  test:
+    cmd: python -m pytest tests.py -v
+    deps:
+      - tests.py
+      - sum.py
+      - data.py
+      - stuff.py
+      - model.py
+      - evale.py
+
+  evaluate:
+    cmd: python eval.py
+    deps:
+      - eval.py
+      - results/model.pt
+      - model.py
+      - stuff.py
+      - data.py
+    metrics:
+      - metrics/rouge_scores.json:
+          cache: false
+
+  visualize:
+    cmd: python visualization.py
+    deps:
+      - visualization.py
+      - sum.py
+      - models/model.pt
+    outs:
+      - vis/
+      - 1/
+      - 2/
+      - 3/
+
+  summarize:
+    cmd: python sum.py
+    deps:
+      - sum.py
+      - results/model.pt
+      - saved_data/wordfield
+      - examples/example.txt
+    outs:
+      - results/news_test_summarizations.txt
+      - results/file_test_sum.txt
+
+  

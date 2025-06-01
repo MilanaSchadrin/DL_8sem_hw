@@ -1,0 +1,5 @@
+train:
+  pretrained_embeddings: true
+  use_label_smoothing: false
+  d_model: 100
+  epochs: 10

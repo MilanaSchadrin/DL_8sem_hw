@@ -5,6 +5,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
 import math
+from torchtext.vocab import GloVe
 
 
 class PositionalEncoding(nn.Module):
@@ -71,7 +72,7 @@ class MultiHeadedAttention(nn.Module):
         self._d_k = d_model // heads_count
         self._heads_count = heads_count
         self._attention = ScaledDotProductAttention(dropout_rate)
-        self._attn_probs = None
+        self.attn_probs = None
 
         self._w_q = nn.Linear(d_model, d_model)
         self._w_k = nn.Linear(d_model, d_model)
@@ -86,7 +87,7 @@ class MultiHeadedAttention(nn.Module):
         query = self._w_q(query).view(nbatches, -1, self._heads_count, self._d_k).transpose(1, 2)
         key = self._w_k(key).view(nbatches, -1, self._heads_count, self._d_k).transpose(1, 2)
         value = self._w_v(value).view(nbatches, -1, self._heads_count, self._d_k).transpose(1, 2)
-        x, self._attn_probs = self._attention(query, key, value, mask)
+        x, self.attn_probs = self._attention(query, key, value, mask)
 
         x = x.transpose(1, 2).contiguous().view(nbatches, -1, self._heads_count * self._d_k)
         x = self._w_o(x)
@@ -141,7 +142,7 @@ class Encoder(nn.Module):
         for block in self._blocks:
             inputs = block(inputs, mask)
             if self.save_probs:
-                self.attn_probs.append(block._self_attn._attn_probs)
+                self.attn_probs.append(block._self_attn.attn_probs)
 
         return self._norm(inputs)
 
@@ -192,8 +193,8 @@ class Decoder(nn.Module):
         for block in self._blocks:
             inputs = block(inputs, encoder_output, source_mask, target_mask)
             if self.save_probs:
-                self.self_attn_probs.append(block._self_attn._attn_probs)
-                self.enc_attn_probs.append(block._encoder_attn._attn_probs)
+                self.self_attn_probs.append(block._self_attn.attn_probs)
+                self.enc_attn_probs.append(block._encoder_attn.attn_probs)
         return self._out_layer(self._norm(inputs))
 
 
@@ -214,12 +215,18 @@ class EncoderDecoder(nn.Module):
     other models.
     """
     def __init__(self, source_vocab_size, target_vocab_size, d_model=256, d_ff=1024,
-                 blocks_count=4, heads_count=8, dropout_rate=0.1, save_probs=False,pretrained_embeddings=None):
+                 blocks_count=4, heads_count=8, dropout_rate=0.1, save_probs=False,pretrained_embeddings=None, word_field=None):
         super(EncoderDecoder, self).__init__()
 
         self.d_model = d_model
         if pretrained_embeddings is not None:
-            ...
+            glove = GloVe(name='6B', dim=d_model)
+            embedding_matrix = torch.zeros((source_vocab_size, d_model))
+            found = 0
+            for word, idx in word_field.vocab.stoi.items():
+                if word in glove.stoi:
+                    embedding_matrix[idx] = glove.vectors[glove.stoi[word]]
+                    found += 1
         else:
             self.encoder_emb = nn.Sequential(
                     nn.Embedding(source_vocab_size, d_model),

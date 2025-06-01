@@ -4,6 +4,10 @@ import numpy as np
 
 BOS_TOKEN = '<s>'
 EOS_TOKEN = '</s>'
+import yaml
+
+with open('params.yaml', 'r') as f:
+        params = yaml.safe_load(f)
 
 if torch.cuda.is_available():
     from torch.cuda import FloatTensor, LongTensor
@@ -53,6 +57,19 @@ def decoding_tokens(tensor, vocab, skip_tokens=('<pad>', '<sos>', '<eos>')):
 
 def load_model(word_field, path):
     model = EncoderDecoder(source_vocab_size=len(word_field.vocab), target_vocab_size=len(word_field.vocab)).to(DEVICE)
+    model.load_state_dict(torch.load(path, map_location=DEVICE, weights_only=True))
+    model.eval()
+
+    return model
+
+
+def load_model_vis(word_field, path):
+    model = model = EncoderDecoder(
+        source_vocab_size=len(word_field.vocab),
+        target_vocab_size=len(word_field.vocab),
+        d_model= params['train']['d_model'],
+        pretrained_embeddings=params['train']['pretrained_embeddings'],
+        word_field=word_field).to(DEVICE)
     model.load_state_dict(torch.load(path, map_location=DEVICE, weights_only=True))
     model.eval()
 
