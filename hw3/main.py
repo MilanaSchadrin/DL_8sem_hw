@@ -1,4 +1,5 @@
 import torch
+import argparse
 import torch.nn as nn
 import pandas as pd
 from tqdm.auto import tqdm
@@ -6,8 +7,14 @@ from model import EncoderDecoder, NoamOpt
 from train import fit
 from stuff import DEVICE
 from data import iterr, load_dataset, load_word_field
+import yaml
+from torchtext.vocab import GloVe
+from label import LabelSmoothing
 
-def main():
+def main(pretrained_embeddings, use_label_smoothing):
+    with open('params.yaml', 'r') as f:
+        params = yaml.safe_load(f)
+
     word_field = load_word_field('./saved_data/wordfield')
 
     train_dataset = load_dataset('./saved_data/train')
@@ -15,13 +22,37 @@ def main():
 
     train_iter, test_iter = iterr(train_dataset,test_dataset)
     
-    model = EncoderDecoder(source_vocab_size=len(word_field.vocab), target_vocab_size=len(word_field.vocab)).to(DEVICE)
+    model = EncoderDecoder(
+        source_vocab_size=len(word_field.vocab),
+        target_vocab_size=len(word_field.vocab),
+        d_model=params['train']['d_model'],
+        pretrained_embeddings=pretrained_embeddings,
+        word_field=word_field
+    ).to(DEVICE)
     pad_idx = word_field.vocab.stoi['<pad>']
-    criterion = nn.CrossEntropyLoss(ignore_index=pad_idx, label_smoothing=0.1).to(DEVICE)
+    if use_label_smoothing:
+        criterion = LabelSmoothing(
+            size=len(word_field.vocab),
+            padding_idx=pad_idx,
+            smoothing=0.1
+        ).to(DEVICE)
+    else:
+        criterion = nn.CrossEntropyLoss(
+            ignore_index=pad_idx,
+            label_smoothing=0.1
+        ).to(DEVICE)
     optimizer = NoamOpt(model.d_model, model)
-    fit(model, criterion, optimizer, train_iter, start_epoch=0, epochs_count=1, val_iter=test_iter)
+    fit(model, criterion, optimizer, train_iter, start_epoch=0, epochs_count=params['train']['epochs'], val_iter=test_iter)
     torch.save(model.state_dict(), "results/model.pt")
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description='Train model with params')
+    parser.add_argument('--pretrained_embeddings', type=lambda x: x.lower() == 'true', default=True,
+                        help='Use pretrained embeddings (true/false)')
+    parser.add_argument('--use_label_smoothing', type=lambda x: x.lower() == 'true', default=False,
+                        help='Use LabelSmoothing loss (true/false)')
+
+    args = parser.parse_args()
+
+    main(args.pretrained_embeddings, args.use_label_smoothing)

@@ -1,6 +1,9 @@
 import torch
-from stuff import BOS_TOKEN, EOS_TOKEN, make_mask, tokens_to_words, DEVICE, load_model, words_to_tokens
+from stuff import BOS_TOKEN, EOS_TOKEN, make_mask, tokens_to_words, DEVICE, load_model, words_to_tokens,subsequent_mask
 from data import load_word_field, load_dataset, iterr
+import heapq
+import torch.nn.functional as F
+import html
 
 
 def get_data(file_path):
@@ -12,58 +15,93 @@ def get_data(file_path):
                 data.append(clean_line)
     return data
 
-
 @torch.no_grad()
-@torch.no_grad()
-def summarize(model, source_input_tokens, word_field, beam_width=5, max_len=64, min_words=10, max_words=30):
-    model.eval()
-    BOS = word_field.vocab.stoi[BOS_TOKEN]
-    EOS = word_field.vocab.stoi[EOS_TOKEN]
-    PAD = word_field.vocab.stoi['<pad>']
+def encode_input(model, text, field, device):
+    tokens = [field.init_token] + field.tokenize(text) + [field.eos_token]
+    indexed = [
+        field.vocab.stoi.get(tok, field.vocab.stoi[field.unk_token])
+        for tok in tokens
+    ]
+    src_tensor = torch.LongTensor(indexed).unsqueeze(0).to(device)
+    src_mask = (src_tensor != field.vocab.stoi[field.pad_token]).unsqueeze(1).unsqueeze(2)
+    encoder_outputs = model.encoder(src_tensor, src_mask)
+    return encoder_outputs, src_mask
 
-    sequences = [(torch.tensor([[BOS]], device=DEVICE), 0.0)]
-    
-    for _ in range(max_len):
+
+def beam_search_decode(model, encoder_outputs, src_mask, field, max_len, beam_size, len_penalty, ngram_block, device):
+    init_id = field.vocab.stoi[field.init_token]
+    eos_id = field.vocab.stoi[field.eos_token]
+    pad_id = field.vocab.stoi[field.pad_token]
+
+    beams = [(0.0, [init_id])]
+
+    for step in range(max_len):
         all_candidates = []
-        for seq, score in sequences:
-            if seq[0, -1].item() == EOS:
-                all_candidates.append((seq, score))
-                continue
 
-            source_mask, target_mask = make_mask(source_input_tokens, seq, pad_idx=PAD)
+        for score, seq in beams:
+            trg_tensor = torch.LongTensor(seq).unsqueeze(0).to(device)
+            trg_mask = (trg_tensor != pad_id).unsqueeze(1).unsqueeze(2)
+            trg_mask = trg_mask & subsequent_mask(trg_tensor.size(1)).to(device)
 
-            logits = model(source_input_tokens, seq, source_mask, target_mask)
-            probs = torch.softmax(logits[:, -1], dim=-1)
-            
-            topk_probs, topk_idx = probs.topk(beam_width)
-            
-            for i in range(beam_width):
-                token = topk_idx[0, i].unsqueeze(0).unsqueeze(0)
-                new_seq = torch.cat([seq, token], dim=1)
-                new_score = score + torch.log(topk_probs[0, i]).item()
-                all_candidates.append((new_seq, new_score))
+            logits = model.decoder(trg_tensor, encoder_outputs, src_mask, trg_mask)
+            log_probs = F.log_softmax(logits[:, -1], dim=-1)
 
-        sequences = sorted(all_candidates, key=lambda x: x[1], reverse=True)[:beam_width]
-        
-        if all(seq[0, -1].item() == EOS for seq, _ in sequences):
+            # N-gram blocking
+            if ngram_block > 0 and len(seq) >= ngram_block:
+                prefix = tuple(seq[-(ngram_block - 1):])
+                blocked = set()
+                for i in range(len(seq) - ngram_block + 1):
+                    if tuple(seq[i:i + ngram_block - 1]) == prefix:
+                        blocked.add(seq[i + ngram_block - 1])
+                for tok_id in blocked:
+                    log_probs[0, tok_id] = -1e9
+            if step < 4:
+                log_probs[0, eos_id] -= 1.0
+
+            top_probs, top_indices = log_probs.topk(beam_size)
+
+            for prob, idx in zip(top_probs[0], top_indices[0]):
+                new_seq = seq + [idx.item()]
+                new_score = score + prob.item()
+                all_candidates.append((new_score, new_seq))
+
+        beams = heapq.nlargest(
+            beam_size,
+            all_candidates,
+            key=lambda x: x[0] / ((len(x[1]) ** len_penalty) if len_penalty > 0 else 1)
+        )
+
+        if all(seq[-1] == eos_id for _, seq in beams):
             break
 
-    best_seq = sequences[0][0][0].tolist()
-    
-    decoded = []
-    for tok in best_seq:
-        word = word_field.vocab.itos[tok]
-        if word not in [BOS_TOKEN, EOS_TOKEN, '<pad>']:
-            decoded.append(word)
-        if word == EOS_TOKEN:
-            break
-    
-    result = ' '.join(decoded[:max_words])
-    
-    if len(decoded) < min_words:
-        result = ' '.join(decoded + ['...'])
-    
-    return result.capitalize()
+    return max(beams, key=lambda x: x[0])[1]
+
+
+def finalize_summary(token_ids, field):
+    unwanted = {'<pad>', '<unk>', '<sos>', '<eos>', BOS_TOKEN, EOS_TOKEN}
+    tokens = [field.vocab.itos[i] for i in token_ids]
+    tokens = [html.unescape(tok) for tok in tokens if tok not in unwanted]
+    tokens = [tok for tok in tokens if len(tok) > 1 or tok.isalpha()]
+    return ' '.join(tokens).strip().capitalize()
+
+
+def summarize(
+    model, input_text, word_field,
+    max_summary_len=25, beam_size=8, len_penalty=0.9, block_ngram=3,
+    device=DEVICE
+):
+    model.eval()
+
+    encoder_outputs, src_mask = encode_input(model, input_text, word_field, device)
+
+    best_sequence = beam_search_decode(
+        model, encoder_outputs, src_mask, word_field,
+        max_len=max_summary_len, beam_size=beam_size,
+        len_penalty=len_penalty, ngram_block=block_ngram,
+        device=device
+    )
+
+    return finalize_summary(best_sequence[1:-1], word_field) 
 
 
 def generate_summaries(output_path, dataset_examples, model, vocab_field):
@@ -71,10 +109,10 @@ def generate_summaries(output_path, dataset_examples, model, vocab_field):
         for example in dataset_examples:
             input_tokens = tokens_to_words(vocab_field, example)
             clean_input = [token for token in input_tokens if token != '<pad>']
+            input_text = ' '.join(clean_input)
             print(f"Input:\n{' '.join(clean_input)}", file=out_file)
 
-            source_tensor = example.view(1, -1).to(DEVICE)
-            summary_text = summarize(model, source_tensor, vocab_field)
+            summary_text = summarize(model, input_text, vocab_field)
             print(f"Output:\n{summary_text}\n", file=out_file)
 
 
@@ -95,7 +133,7 @@ def main(model_path, file_path):
     with open("results/file_test_sum.txt", "w", encoding="utf-8") as out_file:
         for inp_text, inp_tensor in zip(examples_from_file, tokenized):
             print(f"Input:\n{inp_text}", file=out_file)
-            summary_text = summarize(model, inp_tensor, word_field)
+            summary_text = summarize(model, inp_text, word_field)
             print(f"Output:\n{summary_text}\n", file=out_file)
 
 
