@@ -219,7 +219,7 @@ class EncoderDecoder(nn.Module):
         super(EncoderDecoder, self).__init__()
 
         self.d_model = d_model
-        if pretrained_embeddings is not None:
+        if pretrained_embeddings is not None and word_field is not None:
             glove = GloVe(name='6B', dim=d_model)
             embedding_matrix = torch.zeros((source_vocab_size, d_model))
             found = 0
@@ -227,6 +227,20 @@ class EncoderDecoder(nn.Module):
                 if word in glove.stoi:
                     embedding_matrix[idx] = glove.vectors[glove.stoi[word]]
                     found += 1
+                else:
+                    embedding_matrix[idx] = torch.randn(d_model) * 0.01
+
+            encoder_embedding = nn.Embedding.from_pretrained(embedding_matrix, freeze=False)
+            decoder_embedding = nn.Embedding.from_pretrained(embedding_matrix, freeze=False)
+
+            self.encoder_emb = nn.Sequential(
+                encoder_embedding,
+                PositionalEncoding(d_model, dropout_rate)
+            )
+            self.decoder_emb = nn.Sequential(
+                decoder_embedding,
+                PositionalEncoding(d_model, dropout_rate)
+            )
         else:
             self.encoder_emb = nn.Sequential(
                     nn.Embedding(source_vocab_size, d_model),

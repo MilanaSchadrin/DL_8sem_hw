@@ -4,7 +4,8 @@ import os
 from sum import summarize
 from data import load_word_field
 from stuff import DEVICE, load_model_vis, words_to_tokens
-import math 
+import math
+import argparse
 
 #blocks_count=4, heads_count=8
 
@@ -74,9 +75,9 @@ def generate_attention_maps(model, text, word_field, output_root='vis', example_
     return summary
 
 
-def main():
+def main(model_path):
     word_field = load_word_field('./saved_data/wordfield')
-    model = load_model_vis(word_field, './results/model.pt')
+    model = load_model_vis(word_field, model_path).to(DEVICE)
     model.eval()
 
     texts = [
@@ -91,4 +92,8 @@ def main():
         print(f"Summary: {summary}")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Visualization of attention maps")
+    parser.add_argument('--model_path', type=str, default="results/model_not_label_sm.pt",
+                        help="Path to the trained model checkpoint")
+    args = parser.parse_args()
+    main(args.model_path)

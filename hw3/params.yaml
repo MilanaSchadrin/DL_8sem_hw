@@ -1,5 +1,6 @@
 train:
-  pretrained_embeddings: true
+  pretrained_embeddings: false
   use_label_smoothing: false
-  d_model: 100
+  d_model: 200
   epochs: 10
+  model_path: results/model_not_label_sm.pt

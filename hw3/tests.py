@@ -128,7 +128,7 @@ def test_summarize_mock(monkeypatch, mock_field):
 
     model = DummyModel()
 
-    input_text = "hello world"  # вместо тензора передаем строку
+    input_text = "hello world" 
     summary = summarize(model, input_text, mock_field, max_summary_len=5, beam_size=2)
 
     assert isinstance(summary, str)
@@ -181,7 +181,7 @@ class DummyModel(torch.nn.Module):
 
 def test_eval_creates_metrics_file(monkeypatch, mock_field_with_vocab, dummy_iter):
     with TemporaryDirectory() as tmpdir:
-        original_open = open  # сохраняем оригинал
+        original_open = open
 
         monkeypatch.setattr("evale.evaluate.load", lambda name: DummyRouge())
         monkeypatch.setattr("evale.json.dump", lambda obj, f, indent=None: f.write(json.dumps(obj)))
@@ -203,9 +203,8 @@ def test_eval_creates_metrics_file(monkeypatch, mock_field_with_vocab, dummy_ite
 
 class DummyRouge:
     def compute(self, predictions, references, rouge_types, use_stemmer):
-        DummyScore = SimpleNamespace(mid=SimpleNamespace(fmeasure=0.5))
         return {
-            'rouge1': DummyScore,
-            'rouge2': DummyScore,
-            'rougeL': DummyScore,
+            'rouge1': 0.5,
+            'rouge2': 0.3,
+            'rougeL': 0.4,
         }

@@ -37,23 +37,25 @@ stages:
       - evale.py
 
   evaluate:
-    cmd: python eval.py
+    cmd: python eval.py --model_path=${model_path}
     deps:
       - eval.py
-      - results/model.pt
+      - ${model_path}
       - model.py
       - stuff.py
       - data.py
     metrics:
-      - metrics/rouge_scores.json:
+      - metrics/rouge_metrics.json:
           cache: false
 
   visualize:
-    cmd: python visualization.py
+    cmd: python visualization.py --model_path=${model_path}
     deps:
       - visualization.py
       - sum.py
-      - models/model.pt
+      - stuff.py
+      - data.py
+      - ${model_path}
     outs:
       - vis/
       - 1/
@@ -61,10 +63,12 @@ stages:
       - 3/
 
   summarize:
-    cmd: python sum.py
+    cmd: python sum.py --model_path=${model_path}
     deps:
       - sum.py
-      - results/model.pt
+      - stuff.py
+      - data.py
+      - - ${model_path}
       - saved_data/wordfield
       - examples/example.txt
     outs:

@@ -55,20 +55,35 @@ def decoding_tokens(tensor, vocab, skip_tokens=('<pad>', '<sos>', '<eos>')):
 
     return sentences
 
-def load_model(word_field, path):
-    model = EncoderDecoder(source_vocab_size=len(word_field.vocab), target_vocab_size=len(word_field.vocab)).to(DEVICE)
-    model.load_state_dict(torch.load(path, map_location=DEVICE, weights_only=True))
+def load_model(word_field, path, d_model=200,pretrained_embeddings=False):
+    if d_model is None:
+        d_model = 200
+    filename = path.split('/')[-1].lower()
+    if pretrained_embeddings is None:
+        pretrained_embeddings = 'emb' in filename
+    model = EncoderDecoder(
+        source_vocab_size=len(word_field.vocab),
+        target_vocab_size=len(word_field.vocab),
+        d_model=d_model,
+        pretrained_embeddings=pretrained_embeddings,
+        word_field=word_field).to(DEVICE)
     model.eval()
 
     return model
 
 
-def load_model_vis(word_field, path):
+def load_model_vis(word_field, path,d_model=200,pretrained_embeddingsА=False):
+    if d_model is None:
+        d_model = 200
+    filename = path.split('/')[-1].lower()
+    if pretrained_embeddings is None:
+        pretrained_embeddings = 'emb' in filename
     model = model = EncoderDecoder(
         source_vocab_size=len(word_field.vocab),
         target_vocab_size=len(word_field.vocab),
-        d_model= params['train']['d_model'],
-        pretrained_embeddings=params['train']['pretrained_embeddings'],
+        save_probs=True,
+        d_model= d_model,
+        pretrained_embeddings=pretrained_embeddings,
         word_field=word_field).to(DEVICE)
     model.load_state_dict(torch.load(path, map_location=DEVICE, weights_only=True))
     model.eval()
