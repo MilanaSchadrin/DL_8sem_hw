@@ -43,7 +43,15 @@ def main(pretrained_embeddings, use_label_smoothing):
         ).to(DEVICE)
     optimizer = NoamOpt(model.d_model, model)
     fit(model, criterion, optimizer, train_iter, start_epoch=0, epochs_count=params['train']['epochs'], val_iter=test_iter)
-    torch.save(model.state_dict(), "results/model.pt")
+    if pretrained_embeddings and use_label_smoothing:
+        save_path = "results/shared_emb_label_sm.pt"
+    elif pretrained_embeddings and not use_label_smoothing:
+        save_path = "results/shared_emb_not_label_smooth.pt"
+    elif not pretrained_embeddings and use_label_smoothing:
+        save_path = "results/model_label_smooth.pt"
+    else:  # no pretrained embeddings, no label smoothing
+        save_path = "results/model_not_label_sm.pt"
+    torch.save(model.state_dict(), save_path)
 
 
 if __name__ == '__main__':

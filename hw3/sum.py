@@ -4,7 +4,8 @@ from data import load_word_field, load_dataset, iterr
 import heapq
 import torch.nn.functional as F
 import html
-
+import os
+import argparse
 
 def get_data(file_path):
     data = []
@@ -138,6 +139,9 @@ def main(model_path, file_path):
 
 
 if __name__ == "__main__":
-    import os
+    parser = argparse.ArgumentParser(description="Summarization script")
+    parser.add_argument('--model_path', type=str, default="results/model_not_label_sm.pt",
+                        help="Path to the trained model checkpoint")
+    args = parser.parse_args()
     os.makedirs("results", exist_ok=True)
-    main("results/model.pt", "examples/example.txt")
+    main(args.model_path, "examples/example.txt")
