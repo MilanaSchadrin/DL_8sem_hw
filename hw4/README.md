@@ -21,3 +21,4 @@ make train
 ```
 make test
 ```
+![Графики из wandb](https://drive.google.com/file/d/1fOaQcnWx2MKO4kJ8Vxb248KerdJNXVDo/view?usp=drive_link)
