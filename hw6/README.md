@@ -30,3 +30,4 @@ make train
 ```
 make play
 ```
+![Графики из wandb DQN](https://github.com/MilanaSchadrin/DL_8sem_hw/blob/main/hw6/Forgotten.png)
