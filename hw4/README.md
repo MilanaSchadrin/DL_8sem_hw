@@ -21,4 +21,4 @@ make train
 ```
 make test
 ```
-![Графики из wandb](https://drive.google.com/file/d/1fOaQcnWx2MKO4kJ8Vxb248KerdJNXVDo/view?usp=drive_link)
+![Графики из wandb](https://github.com/MilanaSchadrin/DL_8sem_hw/blob/main/hw4/Grap.png)
